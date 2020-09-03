@@ -1,14 +1,9 @@
 package com.we.bumpinto.service;
 
-import java.net.URLEncoder;
 import java.util.List;
-import java.util.Random;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.we.bumpinto.dao.BumpDao;
