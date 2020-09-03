@@ -14,11 +14,11 @@ public class BumpController {
 	@Autowired
 	private BumpService bumpService;
 	//카페 글 목록 보기 요청 처리 
-	@RequestMapping("/home")
+	@RequestMapping("/list")
 	public ModelAndView getList(HttpServletRequest request, 
 			ModelAndView mView) {
 		bumpService.getList(mView);
-		mView.setViewName("home");
+		mView.setViewName("list");
 		return mView;
 	}
 }
