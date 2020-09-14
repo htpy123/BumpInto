@@ -18,5 +18,10 @@ public class BumpDaoImpl implements BumpDao{
 		
 		return session.selectList("bump.getList");
 	}
+	
+	@Override
+	public void insert(BumpDto dto) {
+		session.insert("bump.addBump",dto);
+	}
 
 }

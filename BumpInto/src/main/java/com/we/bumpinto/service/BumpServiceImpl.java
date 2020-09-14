@@ -28,4 +28,9 @@ public class BumpServiceImpl implements BumpService{
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void insert(BumpDto dto) {
+		BumpDao.insert(dto);
+	}
 }

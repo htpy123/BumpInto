@@ -10,8 +10,8 @@
 	
 	<insert id="addBump" parameterType="BumpDto">
 		INSERT INTO BumpInto
-		(num,writer,title,content,regdate,aptdate)
-		VALUES(BumpInto_seq.NEXTVAL, #{wrtier}, #{title}, #{content},SYSDATE,#{aptdate})
+		(num,writer,title,content,regdate,aptdate,Latitude,longitude,writerpwd)
+		VALUES(BumpInto_seq.NEXTVAL,#{writer},#{title},#{content},SYSDATE,#{aptdate},#{Latitude}, #{longitude},#{writerpwd});
 	</insert>
 	
 	<update id="update">
