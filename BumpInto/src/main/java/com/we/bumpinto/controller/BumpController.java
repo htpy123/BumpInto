@@ -1,7 +1,5 @@
 package com.we.bumpinto.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +22,7 @@ public class BumpController {
 	@RequestMapping("/insert")
 	public ModelAndView getList(BumpDto dto, ModelAndView mView) {
 		bumpService.insert(dto);
-		mView.setViewName("home");
+		mView.setViewName("redirect:/home.do");
 		return mView;
 	}
 }

@@ -60,5 +60,5 @@
 		<beans:property name="maxUploadSize" value="102400000"/>
 	</beans:bean>
 	
-	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>	
 </beans:beans>

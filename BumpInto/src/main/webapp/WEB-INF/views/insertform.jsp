@@ -19,11 +19,9 @@
 <body>
 	<div class="container">
 		<div id="map" style="width:100%;height:350px;"></div>
-		<!-- style="display:none;" -->
-		<div id="clickLatlng" ></div>
-		<form action="home.do" method="post">
 		<br />
-			<input type="hidden" name="Latitude" id="Latitude" />
+		<form action="insert.do" method="post">
+			<input type="hidden" name="latitude" id="latitude" />
 			<input type="hidden" name="longitude" id="longitude" />
 			<div class="form-group row">
 				<label for="writer" class="col-sm-1 col-form-label">작성자</label>
@@ -43,9 +41,10 @@
 					<input class="form-control" type="text" name="aptdate" id="aptdate"/>
 				</div>	
 			</div>
+			
 			<div class="form-group">
 				<label for="content">내용</label>
-				<input class="form-control" type="text" name="content" id="content"/>
+				<textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
 			</div>
 			
 			<div class="form-group row">
@@ -54,14 +53,15 @@
 					<input class="form-control" type="text" name="writerpwd" id="writerpwd"/>
 				</div>	
 			</div>
-			<button type="submit" class="btn btn-primary">등록</button>
-			<button type="reset" class="btn btn-danger">취소</button>
+			<button class="btn btn-outline-primary"  type="submit" onclick="submitContents(this);">등록</button>
+			<button class="btn btn-outline-warning" type="reset" >취소</button>
 		</form>
 		<br />
 		<br />
 		<br />
 	</div>
 	<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/js/clickMarker.js"></script>
 <script>
 	var oEditors = [];
 	
@@ -114,6 +114,6 @@
 		oEditors.getById["content"].setDefaultFont(sDefaultFont, nFontSize);
 	}
 </script>
-<script src="${pageContext.request.contextPath }/resources/js/clickMarker.js"></script>
+
 </body>
 </html>

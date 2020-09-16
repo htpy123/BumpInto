@@ -24,17 +24,11 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     // 마커 위치를 클릭한 위치로 옮깁니다
     marker.setPosition(latlng);
     
-    var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
-    message += '경도는 ' + latlng.getLng() + ' 입니다';
-    
-    var resultDiv = document.getElementById('clickLatlng'); 
-    resultDiv.innerHTML = message;
-    
-    var la = latlng.getLat(); //Latitude
-	var lo = latlng.getLng()//longitude
+    var la = parseFloat(latlng.getLat()); //Latitude
+	var lo = parseFloat(latlng.getLng());//longitude
 	
-	document.getElementById('Latitude').innerText=la;
-	document.getElementById('longitude').innerText=lo;
+	document.getElementById('latitude').value=la;
+	document.getElementById('longitude').value=lo;
     
     
 });

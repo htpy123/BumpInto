@@ -16,17 +16,11 @@ public class BumpServiceImpl implements BumpService{
 	
 	@Override
 	public void getList(ModelAndView mView) {
-		//상품 목록
+		
 		List<BumpDto> list=BumpDao.getList();
 		//ModelAndView  객체에 list 라는 키값으로 담는다.
 		mView.addObject("list", list);
-		
-		try {
-			
-		} catch( Exception e)
-		{
-			e.printStackTrace();
-		}
+
 	}
 
 	@Override

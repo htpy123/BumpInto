@@ -23,6 +23,7 @@
 <div id="map" style="width:100%;height:700px;"></div>
 
 <div id="container">
+
 	<c:forEach var="tmp" items="${list }">
 		<div class="card" style="width: 18rem;">
 		  <img src="${pageContext.request.contextPath }/resources/images/sport1" class="card-img-top" alt="...">
@@ -42,9 +43,33 @@
 		</div>
 	</c:forEach>
 </div>
-
-
-   
-<script src="${pageContext.request.contextPath }/resources/js/kakaomap.js"></script>
+<script>
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = { 
+	    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	//마커가 표시될 위치입니다 
+	for(let i=0; i<${list}.length; i++){
+		console.log(i);
+	};
+	var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
+	
+	//마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	position: markerPosition
+	});
+	
+	//마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+	
+	//아래 코드는 지도 위의 마커를 제거하는 코드입니다
+	//marker.setMap(null);    
+</script>
+<!-- <script src="${pageContext.request.contextPath }/resources/js/kakaomaphome.js"></script> -->
 </body>
 </html>
